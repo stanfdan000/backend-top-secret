@@ -28,7 +28,7 @@ describe('backend top secrets routes', () => {
     return setup(pool);
   });
 
-  it('creates a new user', async () => {
+  it.skip('creates a new user', async () => {
     const agent = request.agent(app);
     const res = await agent.post('/api/v1/users').send(newUser);
     const { firstName, lastName, email } = newUser;
@@ -42,7 +42,7 @@ describe('backend top secrets routes', () => {
   });
 
 
-  it.skip('#Post Sign in exisiting user', async () => {
+  it('#Post Sign in exisiting user', async () => {
     const agent = request.agent(app);
     await agent.post('/api/v1/users').send(newUser);
     const res = await agent
