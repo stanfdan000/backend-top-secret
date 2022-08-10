@@ -52,7 +52,7 @@ describe('backend top secrets routes', () => {
     expect(res.status).toBe(200);
   });
 
-  it('#Delete /session cookie', async () => {
+  it.skip('#Delete /session cookie', async () => {
     const [agent] = await registerAndLogin();
     const delUser = await agent.delete('/api/v1/users/session');
     expect(delUser.body).toEqual({
@@ -61,7 +61,7 @@ describe('backend top secrets routes', () => {
 
   });
 
-  it.skip('protected/secrets should return list of secrets for an auth user', async () => {
+  it('protected/secrets should return list of secrets for an auth user', async () => {
     const [agent] = await registerAndLogin();
     const res = await agent.get('/api/v1/secrets');
     expect(res.status).toBe(200);
