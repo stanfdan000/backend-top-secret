@@ -66,8 +66,8 @@ describe('backend top secrets routes', () => {
     const res = await agent.get('/api/v1/secrets');
     expect(res.status).toBe(200);
     expect(res.body[0]).toEqual({
-      title: 'Luke Skywalker secret',
-      description: 'he likes cookies',
+      title: 'master chief',
+      description: 'he likes grunts',
       created_at: expect.any(String)
     });
   });
