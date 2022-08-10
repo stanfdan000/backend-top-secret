@@ -42,7 +42,7 @@ describe('backend top secrets routes', () => {
   });
 
 
-  it('#Post Sign in exisiting user', async () => {
+  it.skip('#Post Sign in exisiting user', async () => {
     const agent = request.agent(app);
     await agent.post('/api/v1/users').send(newUser);
     const res = await agent
@@ -52,7 +52,7 @@ describe('backend top secrets routes', () => {
     expect(res.status).toBe(200);
   });
 
-  it('#Delete /session cookie', async () => {
+  it.skip('#Delete /session cookie', async () => {
     const [agent] = await registerAndLogin();
     const delUser = await agent.delete('/api/v1/users/session');
     expect(delUser.body).toEqual({
@@ -61,7 +61,7 @@ describe('backend top secrets routes', () => {
 
   });
 
-  it('protected/secrets should return list of secrets for an auth user', async () => {
+  it.skip('protected/secrets should return list of secrets for an auth user', async () => {
     const [agent] = await registerAndLogin();
     const res = await agent.get('/api/v1/secrets');
     expect(res.status).toBe(200);
